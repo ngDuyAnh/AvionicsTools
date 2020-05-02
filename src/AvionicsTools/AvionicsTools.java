@@ -1,7 +1,3 @@
-//import gnu.io.*;
-import java.util.Enumeration;
-import java.util.HashMap;
-
 
 /*
 Duy Anh Nguyen
@@ -13,6 +9,8 @@ The Avionics Tools application.
 
 public class AvionicsTools extends javax.swing.JFrame
 {
+    // Private member
+    private SerialCommunication serialComm = null;
 
     /* AvionicsTools()
     Constructor to create new form of 
@@ -21,6 +19,12 @@ public class AvionicsTools extends javax.swing.JFrame
     public AvionicsTools()
     {
         initComponents();
+        
+        // Setup serial communication line
+        this.serialComm = new SerialCommunication(this); // Pass it this window to pull and send information to the form
+        
+        // Search for ports
+        this.serialComm.searchPorts();
     }
 
     /**
@@ -38,6 +42,9 @@ public class AvionicsTools extends javax.swing.JFrame
         label_TopIcon = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         label_TopIcon1 = new javax.swing.JLabel();
+        COM_Port_Select = new javax.swing.JComboBox<>();
+        SerialConnect = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         label_TopIcon2 = new javax.swing.JLabel();
 
@@ -49,7 +56,8 @@ public class AvionicsTools extends javax.swing.JFrame
         jPanel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
         OptionTab.setBorder(new javax.swing.border.MatteBorder(null));
-        OptionTab.setToolTipText("Serial Communication");
+        OptionTab.setToolTipText("");
+        OptionTab.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         label_TopIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon/UMSATS_Rocket_Icon.png"))); // NOI18N
 
@@ -77,6 +85,10 @@ public class AvionicsTools extends javax.swing.JFrame
 
         label_TopIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icon/UMSATS_Rocket_Icon.png"))); // NOI18N
 
+        SerialConnect.setText("Connect");
+
+        jLabel1.setText("Select COM Port");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -84,13 +96,27 @@ public class AvionicsTools extends javax.swing.JFrame
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(label_TopIcon1)
-                .addContainerGap(584, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(COM_Port_Select, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SerialConnect))
+                    .addComponent(jLabel1))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label_TopIcon1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(COM_Port_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SerialConnect)))
+                    .addComponent(label_TopIcon1))
                 .addContainerGap(252, Short.MAX_VALUE))
         );
 
@@ -172,7 +198,10 @@ public class AvionicsTools extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> COM_Port_Select;
     private javax.swing.JTabbedPane OptionTab;
+    private javax.swing.JToggleButton SerialConnect;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -183,17 +212,9 @@ public class AvionicsTools extends javax.swing.JFrame
     // End of variables declaration//GEN-END:variables
 
     
-    // Personal space
-    private Enumeration prts = null; // Ports found when search
-    private HashMap portMap = new HashMap(); // Map the ports' name to CommPortIdentifiers
-    
-    //private CommPortIdentifier selectedPortIdentifier = null;
-    //private SerialPort serialPort = null;
-    
-    
-    public void searchPorts()
+    public void add_COM_to_Select(final String COM_NAME)
     {
-        
+        this.COM_Port_Select.addItem(COM_NAME);
     }
     
 }

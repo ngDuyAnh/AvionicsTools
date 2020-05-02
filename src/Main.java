@@ -13,11 +13,12 @@ public class Main
     
     public static void main(String[] args)
     {
-       AvionicsTools tools = new AvionicsTools();
+        // Create Avionics Tools
+        AvionicsTools tools = new AvionicsTools();
        
-       // Setup Avionics Tools
-       tools.setIconImage((new ImageIcon("icon/UMSATS_Rocket_Icon.png")).getImage());
-       tools.setVisible(true);
+        // Setup Avionics Tools
+        tools.setIconImage((new ImageIcon("icon/UMSATS_Rocket_Icon.png")).getImage());
+        tools.setVisible(true);
     }
     
 }
