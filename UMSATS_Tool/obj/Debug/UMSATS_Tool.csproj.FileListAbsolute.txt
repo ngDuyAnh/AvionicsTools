@@ -1,0 +1,10 @@
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\bin\Debug\UMSATS_Tool.exe.config
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\bin\Debug\UMSATS_Tool.exe
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\bin\Debug\UMSATS_Tool.pdb
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.csprojAssemblyReference.cache
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.Properties.Resources.resources
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.csproj.GenerateResource.cache
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.csproj.CoreCompileInputs.cache
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.exe
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.pdb
+C:\Users\Duy Anh\Documents\School\Rocket\Avionics_Tools\UMSATS_Tool\UMSATS_Tool\obj\Debug\UMSATS_Tool.AvionicsTools.resources
